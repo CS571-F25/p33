@@ -6,11 +6,12 @@ import coffeeShops from "../data/coffeeShops.json";
 const containerStyle = { width: '100vw', height: '800px' };
 const center = { lat: 43.0731, lng: -89.4012 };
 const libraries = ['places']; // for coffee shops
+const MAP_API_KEY = import.meta.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
 export default function Home(props){
 
     const { isLoaded } = useJsApiLoader({
-        googleMapsApiKey: 'AIzaSyCgCeOdPVt-mrN-8Q2qnEm3C9EGayjwXZ4',
+        googleMapsApiKey: MAP_API_KEY,
         libraries,
     });
     const [selectedShop, setSelectedShop] = useState();

@@ -3,6 +3,9 @@ import React, { useEffect, useState, useContext } from "react"
 import { Row, Col, Container, Pagination, Form, Button} from "react-bootstrap"
 import BulletinMessage from "./BulletinMessage";
 
+
+
+
 export default function CommunityBulletin(props) {
 
     const [messages, setMessages] = useState([]);
@@ -17,7 +20,7 @@ export default function CommunityBulletin(props) {
         fetch(`https://cs571api.cs.wisc.edu/rest/f25/hw6/messages?chatroom=Bascom Hill Hangout&page=${page}`, {
             method: "GET",
             headers: {
-                "X-CS571-ID": "bid_225debe6e094a2d9cdeb3968e3cf5ddffd39773b2318c77fd00c0a5e567f87b7"
+                "X-CS571-ID": 'bid_225debe6e094a2d9cdeb3968e3cf5ddffd39773b2318c77fd00c0a5e567f87b7'
             }
         }).then(res => res.json()).then(json => {
             setMessages(json.messages)
@@ -41,7 +44,7 @@ export default function CommunityBulletin(props) {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "X-CS571-ID": "bid_225debe6e094a2d9cdeb3968e3cf5ddffd39773b2318c77fd00c0a5e567f87b7"
+            "X-CS571-ID": 'bid_225debe6e094a2d9cdeb3968e3cf5ddffd39773b2318c77fd00c0a5e567f87b7'
           },
           credentials: "include",
           body: JSON.stringify({
@@ -65,7 +68,7 @@ export default function CommunityBulletin(props) {
       function handleDelete(messageId) {
         fetch(`https://cs571api.cs.wisc.edu/rest/f25/hw6/messages?id=${messageId}`, {
           method: "DELETE",
-          headers: { "X-CS571-ID": CS571.getBadgerId() },
+          headers: { "X-CS571-ID": 'bid_225debe6e094a2d9cdeb3968e3cf5ddffd39773b2318c77fd00c0a5e567f87b7' },
           credentials: "include"
         })
         .then(res => {
