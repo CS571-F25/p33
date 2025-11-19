@@ -14,6 +14,8 @@ export default function Sidebar({ isOpen, onClose }) {
                     <Link to="/" onClick={onClose}>Home</Link>
                     <Link to="/About" onClick={onClose}>About</Link>
                     <Link to="/Profile" onClick={onClose}>Profile</Link>
+                    <Link to="/DrinkChoice" onClick={onClose}>Drink Search</Link>
+                    <Link to="/CommunityBulletin" onClick={onClose}>Community Bulletin Board</Link>
                 </nav>
             </div>
         </>

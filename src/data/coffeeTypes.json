@@ -1,0 +1,117 @@
+[
+    {
+        "drink": "americano",
+        "attributes" : ["hot", "caffeinated", "espresso", "cold"]
+    },
+
+    {
+        "drink": "latte",
+        "attributes" : ["hot", "caffeinated", "cold", "sweet"]
+    },
+    {
+        "drink": "mocha",
+        "attributes" : ["hot", "caffeinated", "cold", "sweet", "espresso"]
+    },
+    {
+        "drink": "macchiatto",
+        "attributes" : ["hot", "caffeinated", "cold", "sweet", "espresso"]
+    },
+    {
+        "drink": "cortado",
+        "attributes" : ["hot", "caffeinated", "espresso"]
+    },
+    {
+        "drink": "capuccino",
+        "attributes" : ["hot", "caffeinated", "espresso"]
+    },
+    {
+        "drink": "cafe au lait",
+        "attributes" : ["hot", "caffeinated"]
+    },
+    {
+        "drink": "drip coffee",
+        "attributes" : ["hot", "caffeinated"]
+    },
+    {
+        "drink": "cold brew",
+        "attributes" : ["cold", "caffeinated"]
+    },
+    {
+        "drink": "matcha",
+        "attributes" : ["hot", "caffeinated", "tea", "cold", "sweet"]
+    },
+    {
+        "drink": "spruce sage flat white",
+        "attributes" : ["hot", "caffeinated", "espresso", "seasonal"]
+    },
+    {
+        "drink": "piccolo",
+        "attributes" : ["hot", "caffeinated", "espresso"]
+    },
+    {
+        "drink": "flat white",
+        "attributes" : ["hot", "caffeinated", "espresso"]
+    },
+    {
+        "drink": "chai",
+        "attributes" : ["hot", "caffeinated", "tea", "cold", "sweet"]
+    },
+    {
+        "drink": "golden milk",
+        "attributes" : ["hot", "sweet"]
+    },
+    {
+        "drink": "hot chocolate",
+        "attributes" : ["hot", "sweet"]
+    },
+    {
+        "drink": "hot tea",
+        "attributes" : ["hot", "caffeinated", "tea"]
+    },
+    {
+        "drink": "candy cane latte",
+        "attributes" : ["hot", "caffeinated", "seasonal", "sweet", "espresso"]
+    },
+    {
+        "drink": "iced tea",
+        "attributes" : ["cold", "caffeinated"]
+    },
+    {
+        "drink": "lemonade",
+        "attributes" : ["cold", "sweet"]
+    },
+
+    {
+        "drink": "affogato",
+        "attributes" : ["hot", "caffeinated", "espresso"]
+    },
+
+    {
+        "drink": "turkish coffee",
+        "attributes" : ["hot", "caffeinated"]
+    },
+    {
+        "drink": "shake",
+        "attributes" : ["sweet", "cold"]
+    },
+    {
+        "drink": "smoothie",
+        "attributes" : ["cold", "sweet"]
+    },
+    {
+        "drink": "refresher",
+        "attributes" : ["cold", "sweet", "tea"]
+    },
+    {
+        "drink": "pumpkin pie latte",
+        "attributes": ["cold", "hot", "seasonal", "sweet", "espresso", "caffeinated"]
+    },
+    {
+        "drink": "steamer",
+        "attributes" : ["hot", "sweet"]
+    },
+    {
+        "drink": "pistachio mint latte",
+        "attributes": ["cold", "hot", "seasonal", "sweet", "espresso", "caffeinated"]
+    }
+]

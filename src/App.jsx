@@ -8,6 +8,8 @@ import About from './components/About'
 import Profile from './components/Profile'
 import Sidebar from "./components/Sidebar";
 import Favorites from './components/Favorites'
+import DrinkChoice from './components/DrinkChoice'
+import CommunityBulletin from './components/CommunityBulletin'
 
 
 function App() {
@@ -33,6 +35,8 @@ function App() {
       <Route path="/About" element={<About/>}></Route>
       <Route path="/Profile" element={<Profile/>}></Route>
       <Route path="/Favorites" element={<Favorites />} />
+      <Route path="/DrinkChoice" element={<DrinkChoice/>}></Route>
+      <Route path="/CommunityBulletin" element={<CommunityBulletin/>}></Route>
     </Routes>
   </HashRouter>
 }
