@@ -1,0 +1,108 @@
+[
+  {
+    "id": 1,
+    "name": "Wonderstate Coffee",
+    "lat": 43.0743024,
+    "lng": -89.3832342,
+    "address": "27 W Main St, Madison, WI 53703",
+    "drinks": ["americano", "latte", "mocha", "espresso", "macchiatto", "cortado", "cappuccino", "cafe au lait", "drip coffee", "matcha", "spruce sage flat white"],
+    "categories": ["seasonal", "hot", "cold"],
+    "reviews": [
+      {
+        "rating": 5,
+        "text": "Amazing coffee and pastries!",
+        "photo": null
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Bradbury's Coffee",
+    "lat": 43.0735053,
+    "lng": -89.3860466,
+    "address": "127 N Hamilton St, Madison, WI 53703",
+    "drinks": ["espresso", "americano", "cold brew", "macchiato", "piccolo", "cappuccino", "flat white", "latte", "mocha", "chai", "golden milk", "hot chocolate"],
+    "categories": ["hot", "cold"],
+    "reviews": []
+  },
+  {
+    "id": 3,
+    "name": "New Here Coffee",
+    "lat": 43.0736023,
+    "lng": -89.3957266,
+    "address": "339 W Gorham St, Madison, WI 53703",
+    "drinks": ["latte", "americano", "cappuccino", "espresso", "cortado", "cold brew", "chai", "drip coffee", "flat white", "hot tea", "matcha", "candy cane latte"],
+    "categories": ["seasonal", "hot", "cold"],
+    "reviews": []
+  },
+  {
+    "id": 4,
+    "name": "The Shop by EBNS",
+    "lat": 43.0730112,
+    "lng": -89.4010899,
+    "address": "626 Langdon St, Madison, WI 53703",
+    "drinks": ["cold brew", "chai", "matcha", "iced tea", "lemonade"],
+    "categories": ["hot", "cold"],
+    "reviews": []
+  },
+  {
+    "id": 5,
+    "name": "Ellipse Coffee & Crepes",
+    "lat": 43.0731978,
+    "lng": -89.3941827,
+    "address": "430 State St, Madison, WI 53703",
+    "drinks": ["american coffee", "americano", "turkish coffee", "hot chocolate", "cappuccino", "latte", "mocha", "affogato", "espresso", "matcha", "shake", "smoothie", "refresher"],
+    "categories": ["hot", "cold"],
+    "reviews": []
+  },
+  {
+    "id": 6,
+    "name": "Fair Trade Coffee House",
+    "lat": 43.0729757,
+    "lng": -89.3989339,
+    "address": "418 State St, Madison, WI 53703",
+    "drinks": ["americano", "chai", "cappuccino", "latte", "mocha", "macchiato", "espresso", "matcha", "cold brew", "hot chocolate"],
+    "categories": ["hot", "cold"],
+    "reviews": []
+  },
+  {
+    "id": 7,
+    "name": "Michelangelo's Coffee House",
+    "lat": 43.0754051,
+    "lng": -89.3852952,
+    "address": "114 State St, Madison, WI 53703",
+    "drinks": ["americano", "chai", "cafe au lait", "cappuccino", "latte", "mocha", "macchiato", "espresso", "matcha", "cold brew", "hot chocolate", "turkish coffee", "smoothie", "pumpkin pie latte"],
+    "categories": ["seasonal", "hot", "cold"],
+    "reviews": []
+  },
+  {
+    "id": 8,
+    "name": "Valentia",
+    "lat": 43.0729278,
+    "lng": -89.4011592,
+    "address": "799 University Ave, Madison, WI 53715",
+    "drinks": ["steamer", "chai", "cappuccino", "latte", "mocha", "hot tea", "espresso", "matcha", "cold brew", "hot chocolate"],
+    "categories": ["hot", "cold"],
+    "reviews": []
+  },
+  {
+    "id": 9,
+    "name": "Indie Coffee",
+    "lat": 43.0730556,
+    "lng": -89.4011111,
+    "address": "1225 Regent St, Madison, WI 53715",
+    "drinks": ["americano", "cappuccino", "latte", "mocha", "hot tea", "espresso", "cortado", "cold brew", "drip coffee"],
+    "categories": ["hot", "cold"],
+    "reviews": []
+  },
+  {
+    "id": 10,
+    "name": "Barriques Coffee - West Wash",
+    "lat": 43.0725,
+    "lng": -89.3997,
+    "address": "127 W Washington Ave, Madison, WI 53702",
+    "drinks": ["americano", "cappuccino", "latte", "mocha", "hot tea", "espresso", "cortado", "cold brew", "drip coffee", "cafe au lait", "hot chocolate", "chai", "pistachio mint latte"],
+    "categories": ["seasonal", "hot", "cold"],
+    "reviews": []
+  }
+]

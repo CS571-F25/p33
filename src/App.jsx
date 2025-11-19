@@ -4,13 +4,35 @@ import viteLogo from '/vite.svg'
 import { HashRouter, Routes, Route } from 'react-router'
 import './App.css'
 import Home from './components/Home'
-import AboutMe from './components/AboutMe'
+import About from './components/About'
+import Profile from './components/Profile'
+import Sidebar from "./components/Sidebar";
+import Favorites from './components/Favorites'
+
 
 function App() {
+  const [open, setOpen] = useState(false);
+
   return <HashRouter>
+    <button
+      onClick={() => setOpen(true)}
+      style={{
+        position: "fixed",
+        left: 20,
+        top: 20,
+        zIndex: 100,
+        padding: "10px 15px",
+        fontSize: "16px",
+      }}
+    >
+      ☰
+    </button>
+    <Sidebar isOpen={open} onClose={() => setOpen(false)} />
     <Routes>
       <Route path="/" element={<Home/>}></Route>
-      <Route path="/AboutMe" element={<AboutMe/>}></Route>
+      <Route path="/About" element={<About/>}></Route>
+      <Route path="/Profile" element={<Profile/>}></Route>
+      <Route path="/Favorites" element={<Favorites />} />
     </Routes>
   </HashRouter>
 }
