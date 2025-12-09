@@ -10,12 +10,7 @@ export default function Login() {
     const usernameRef = useRef();
     const pinRef = useRef();
 
-    // Note! You should use this in combination with sessionStorage.
-    // Otherwise, when the user refreshes the page, it will go away!
-    const [loginStatus, setLoginStatus] = useState(0);
-    useEffect(() => {
-        sessionStorage.setItem("loginStatus", JSON.stringify(loginStatus.loggedIn));
-    }, [loginStatus]);
+    
 
     function handleRegister(e) {
         e.preventDefault();
@@ -55,8 +50,8 @@ export default function Login() {
           );
 
         if (match) {
-            // setLoginStatus({ loggedIn: true, username  });
                 alert("Login was successful");
+                sessionStorage.setItem("username", username);
                 navigate("/Home");
         } else {
             alert("Incorrect username or pin!");
@@ -65,7 +60,7 @@ export default function Login() {
 
     }
 
-    // TODO Create the login component.
+
         return <>
         <h1>Login</h1>
         <Form onSubmit={handleLoginSubmit}>

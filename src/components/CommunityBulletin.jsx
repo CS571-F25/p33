@@ -9,27 +9,30 @@ import BulletinMessage from "./BulletinMessage";
 export default function CommunityBulletin(props) {
 
     const [messages, setMessages] = useState([]);
-    const [page, setPage] = useState(1);
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
-    const [loginStatus, setLoginStatus] = useState(false);
+    const username = sessionStorage.getItem("username");
 
     // we will create our own Bucket API where users can upload annnoucements/posters like they might hang up in the window of a coffee shop. 
     // for now, we are displaying the posts from the Bascom Hill Hangout from hw6
     const loadMessages = () => {
-        fetch(`https://cs571api.cs.wisc.edu/rest/f25/hw6/messages?chatroom=Bascom Hill Hangout&page=${page}`, {
+        fetch(`https://cs571api.cs.wisc.edu/rest/f25/bucket/communitymessages`, {
             method: "GET",
             headers: {
                 "X-CS571-ID": 'bid_225debe6e094a2d9cdeb3968e3cf5ddffd39773b2318c77fd00c0a5e567f87b7'
             }
         }).then(res => res.json()).then(json => {
-            setMessages(json.messages)
+          const messages = Object.entries(json.results).map(([id, msg]) => ({
+            id,
+            ...msg
+          }));
+        
+          setMessages(messages);
+          console.log("Messages array:", messages);
         })
     };
 
-
-    // Why can't we just say []?
-    useEffect(loadMessages, [props, page]);
+    useEffect(loadMessages, [props]);
 
     function handlePost(e) {
         e.preventDefault();
@@ -40,7 +43,7 @@ export default function CommunityBulletin(props) {
           return;
         }
     
-        fetch(`https://cs571api.cs.wisc.edu/rest/f25/hw9/messages?chatroom=Bascom Hill Hangout`, {
+        fetch(`https://cs571api.cs.wisc.edu/rest/f25/bucket/communitymessages`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -48,7 +51,7 @@ export default function CommunityBulletin(props) {
           },
           credentials: "include",
           body: JSON.stringify({
-            chatroom: props.name,
+            "poster": username,
             title,
             content
           })
@@ -66,10 +69,9 @@ export default function CommunityBulletin(props) {
       }
 
       function handleDelete(messageId) {
-        fetch(`https://cs571api.cs.wisc.edu/rest/f25/hw6/messages?id=${messageId}`, {
+        fetch(`https://cs571api.cs.wisc.edu/rest/f25/bucket/communitymessages?id=${messageId}`, {
           method: "DELETE",
           headers: { "X-CS571-ID": 'bid_225debe6e094a2d9cdeb3968e3cf5ddffd39773b2318c77fd00c0a5e567f87b7' },
-          credentials: "include"
         })
         .then(res => {
           if (res.status === 200) {
@@ -85,32 +87,40 @@ export default function CommunityBulletin(props) {
     return <>
         <h1>Community Bulletin Board! </h1>
         {
-            /* TODO: Allow an authenticated user to create a post. */
-            loginStatus ? (
+          <div style={{ display: "flex", justifyContent: "center" }}>
                 <Form onSubmit={handlePost} style={{ marginBottom: "2rem" }}>
                   <Form.Group>
                     <Form.Label htmlFor="titleInput">Title</Form.Label>
                     <Form.Control
                       type="text"
+                      style={{ width: "300px" }}
                       id = "titleInput"
                       value={title}
                       onChange={(e) => setTitle(e.target.value)}
                     />
                   </Form.Group>
                   <Form.Group>
-                    <Form.Label htmlFor="contentInput">Content</Form.Label>
+                    <Form.Label style={{marginTop:"10px"}} htmlFor="contentInput">Content</Form.Label>
                     <Form.Control
                       type = "text"
+                      style={{ width: "300px" }}
                       id = "contentInput"
                       value={content}
                       onChange={(e) => setContent(e.target.value)}
                     />
                   </Form.Group>
-                  <Button type="submit" style={{ marginTop: "0.5rem" }} >Create Post</Button>
+                  <Button onClick={handlePost} style={{
+                    marginTop: "10px",
+                     padding: "10px 20px",
+                     background: "lightblue",
+                     color: "black",
+                     border: "1px solid gray",
+                     borderRadius: "8px",
+                     cursor: "pointer",
+                     fontSize: "16px",
+                     }} >Create Post</Button>
                 </Form>
-              ) : (
-                <p>You must be logged in to post!</p>
-              )
+                </div>
         }
         <hr/>
         {
@@ -122,13 +132,20 @@ export default function CommunityBulletin(props) {
                             <Row>
                                   {
                                         messages.map((message, i) => (
-                                            <Col xs={12} md={6} lg={4} key = {message.id}>
+                                            <Col xs={12} md={6} lg={4} key={message.id}>
                                         <BulletinMessage {...message}></BulletinMessage>
-                                        {loginStatus?.username === message.poster && (
+                                        {username === message.poster && (
                                             <Button
                                             variant="danger"
                                             onClick={() => handleDelete(message.id)}
-                                            style={{ marginTop: "0.25rem", width: "100%" }}
+                                            style={{
+                                              padding: "5px 10px",
+                                              borderRadius: "6px",
+                                              border: "1px solid gray",
+                                              background: "pink",
+                                              color: "black",
+                                              cursor: "pointer",
+                                            }}
                                             >Delete Post</Button>
                                             )}
                                         </Col>
@@ -147,19 +164,5 @@ export default function CommunityBulletin(props) {
 
                 
         }
-
-<div>
-    <Pagination>
-    {[1, 2, 3, 4].map(pageNum => (
-      <Pagination.Item
-        key={pageNum}
-        active={pageNum === page}
-        onClick={() => setPage(pageNum)}
-      >
-        {pageNum}
-      </Pagination.Item>
-    ))}
-    </Pagination>
-</div>
 </>
 }
