@@ -90,7 +90,16 @@ export default function DrinkChoice() {
                             <p>No shops serve this drink.</p>
                         ) : (
                             matchingShops.map(shop => (
-                                <p key={shop.name}>{shop.name}</p>
+                                <p 
+                                    key={shop.name}
+                                    style={{ cursor: "pointer", textDecoration: "underline" }}
+                                    onClick={() => {
+                                        localStorage.setItem("selectedShopId", shop.id);
+                                        window.location.href = "/";   // or navigate("/")
+                                    }}
+                                >
+                                    {shop.name}
+                                </p>
                             ))
                         )}
                     </>

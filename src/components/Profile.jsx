@@ -1,6 +1,5 @@
 import profilePic from "../assets/profilePicture.png";
 import { Button } from "react-bootstrap";
-//import FavoriteCoffeeShops from "./FavoriteCoffeeShops";
 import { useNavigate } from "react-router-dom";
 
 export default function Profile() {
@@ -10,6 +9,11 @@ export default function Profile() {
   function handleFavorites() {
     navigate("/Favorites");
   }
+
+  function handleJournal() {
+    navigate("/Journal");
+  }
+
   return ( <div> 
       <img 
         src={profilePic}
@@ -24,7 +28,35 @@ export default function Profile() {
       />
       <h1>FirstName LastName</h1>
       <h2>@username</h2>
-      <Button onClick={handleFavorites}>Favorite Coffee Shops</Button>
+      < div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          marginTop: "20px"
+        }}
+      >
+        <Button 
+          style={{ 
+            margin: 20, 
+            backgroundColor: "lightblue", 
+            color: "black", 
+            borderColor: "gray" 
+          }} 
+          onClick={handleFavorites}>
+            Favorite Coffee Shops
+        </Button>
+        <Button 
+          style={{ 
+            margin: 20, 
+            backgroundColor: "lightblue", 
+            color: "black", 
+            borderColor: "gray"  
+          }} 
+          onClick={handleJournal}>
+            Journal
+        </Button>
+      </div>
     </div>
   );
 }
