@@ -11,7 +11,7 @@ export default function Sidebar({ isOpen, onClose }) {
             <div className={`sidebar ${isOpen ? "open" : ""}`}>
                 <h2>Menu</h2>
                 <nav>
-                    <Link to="/" onClick={onClose}>Home</Link>
+                    <Link to="/Home" onClick={onClose}>Home</Link>
                     <Link to="/About" onClick={onClose}>About</Link>
                     <Link to="/Profile" onClick={onClose}>Profile</Link>
                     <Link to="/DrinkChoice" onClick={onClose}>Drink Search</Link>

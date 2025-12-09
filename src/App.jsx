@@ -10,6 +10,8 @@ import Sidebar from "./components/Sidebar";
 import Favorites from './components/Favorites'
 import DrinkChoice from './components/DrinkChoice'
 import CommunityBulletin from './components/CommunityBulletin'
+import Login from './components/Login'
+import Register from './components/Register'
 
 
 function App() {
@@ -31,7 +33,9 @@ function App() {
     </button>
     <Sidebar isOpen={open} onClose={() => setOpen(false)} />
     <Routes>
-      <Route path="/" element={<Home/>}></Route>
+      <Route path="/" element={<Login/>}></Route>
+      <Route path="/Register" element={<Register/>}></Route>
+      <Route path="/Home" element={<Home/>}></Route>
       <Route path="/About" element={<About/>}></Route>
       <Route path="/Profile" element={<Profile/>}></Route>
       <Route path="/Favorites" element={<Favorites />} />
