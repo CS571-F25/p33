@@ -20,7 +20,7 @@ export default function Favorites() {
     function handleViewOnMap(id) {
         // store the selected shop id so Home can pick it up
         localStorage.setItem("selectedShopId", id);
-        navigate("/"); // go to the map page
+        navigate("/Home"); // go to the map page
     }
 
     function goBack() {

@@ -17,6 +17,10 @@ export default function DrinkChoice() {
         }));
     };
 
+    function navigateHome() {
+        navigate("/Home");
+    }
+
     const decisions = Object.keys(selectedAttributes)
         .filter(attr => selectedAttributes[attr]);
 
@@ -93,10 +97,7 @@ export default function DrinkChoice() {
                                 <p 
                                     key={shop.name}
                                     style={{ cursor: "pointer", textDecoration: "underline" }}
-                                    onClick={() => {
-                                        localStorage.setItem("selectedShopId", shop.id);
-                                        window.location.href = "/";   // or navigate("/")
-                                    }}
+                                    onClick={navigateHome}
                                 >
                                     {shop.name}
                                 </p>
