@@ -62,16 +62,43 @@ export default function Login() {
 
 
         return <>
+       
         <h1>Login</h1>
+        <div style={{ display: "flex", justifyContent: "center" }}>
         <Form onSubmit={handleLoginSubmit}>
             <Form.Label htmlFor="usernameInput">Username</Form.Label>
-            <Form.Control id="usernameInput" ref={usernameRef}></Form.Control>
-            <Form.Label htmlFor="passwordInput">Password</Form.Label>
-            <Form.Control id="passwordInput" type="password" ref={pinRef}></Form.Control>
+            <Form.Control id="usernameInput" 
+            ref={usernameRef}
+            style={{ width: "300px" }}></Form.Control>
+            <Form.Label htmlFor="passwordInput" style={{ marginTop: "10px" }}>Password</Form.Label>
+            <Form.Control id="passwordInput" 
+            type="password" 
+            style={{ width: "300px" }}
+            ref={pinRef}></Form.Control>
             <br/>
-            <Button type="submit" onClick={handleLoginSubmit}>Login</Button>
-            <p>Don't Have an Account Yet?</p>
-            <Button type="submit" onClick={handleRegister}>Register</Button>
+            <Button type="submit" 
+            style={{
+                padding: "10px 20px",
+                background: "lightblue",
+                color: "black",
+                border: "1px solid gray",
+                borderRadius: "8px",
+                cursor: "pointer",
+                fontSize: "16px",
+              }}
+            onClick={handleLoginSubmit}>Login</Button>
+            <p style={{ marginTop: "20px" }}><strong>Don't Have an Account Yet?</strong></p>
+            <Button type="submit" 
+            style={{
+                padding: "5px 10px",
+                borderRadius: "6px",
+                border: "1px solid gray",
+                background: "pink",
+                color: "black",
+                cursor: "pointer",
+              }}
+              onClick={handleRegister}>Register</Button>
         </Form>
+        </div>
         </>
 }

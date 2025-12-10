@@ -10,6 +10,9 @@ export default function Register() {
     const navigate = useNavigate();
 
 
+    function handleBack() {
+        navigate("/");
+    }
 
     async function handleRegisterSubmit(e) {
         e.preventDefault();
@@ -63,6 +66,7 @@ export default function Register() {
         .then(res => {
             if (res.status === 200) {
                 alert(username + " successfully registered!");
+                sessionStorage.setItem("username", username);
                 navigate("/Home");
             } else {
                 alert("Something went wrong");
@@ -75,18 +79,41 @@ export default function Register() {
 
     return  <>
     <h1>Register</h1>
+    <div style={{ display: "flex", justifyContent: "center" }}>
     <Form onSubmit = {handleRegisterSubmit}>
-    <Form.Label htmlFor="usernameInput">Username</Form.Label>
-    <Form.Control id="usernameInput" value={username}
+    <Form.Label style={{ marginTop:"10px" }} htmlFor="usernameInput">Username</Form.Label>
+    <Form.Control id="usernameInput"  style={{ width: "300px" }} value={username}
           onChange={(e) => setUsername(e.target.value)}></Form.Control>
-    <Form.Label htmlFor="passwordInput">Password</Form.Label>
-    <Form.Control id="passwordInput" type="password" value={password}
+    <Form.Label style={{ marginTop:"10px" }} htmlFor="passwordInput">Password</Form.Label>
+    <Form.Control id="passwordInput" style={{ width: "300px" }} type="password" value={password}
           onChange={(e) => setPassword(e.target.value)}></Form.Control>
-    <Form.Label htmlFor="repeatPasswordInput">Repeat Password</Form.Label>
-    <Form.Control id="repeatPasswordInput" type="password" value={rpPassword}
+    <Form.Label style={{ marginTop:"10px" }} htmlFor="repeatPasswordInput">Confirm Password</Form.Label>
+    <Form.Control id="repeatPasswordInput" style={{ width: "300px" }} type="password" value={rpPassword}
           onChange={(e) => setRpPassword(e.target.value)}></Form.Control>
     <br/>
-    <Button type="submit">Register</Button>
+    <Button 
+    style={{
+        padding: "5px 10px",
+        borderRadius: "6px",
+        border: "1px solid gray",
+        background: "pink",
+        color: "black",
+        cursor: "pointer",
+      }}
+      onClick={handleBack}>Back</Button>
+    <Button 
+    style={{
+        padding: "10px 20px",
+        background: "lightblue",
+        color: "black",
+        border: "1px solid gray",
+        borderRadius: "6px",
+        cursor: "pointer",
+        fontSize: "16px",
+        marginLeft: "10px"
+      }}
+      onClick={handleRegisterSubmit} type="submit">Register</Button>
     </Form>
+    </div>
     </>
 }
